@@ -1,7 +1,7 @@
 CookieJS
 ========
 
-CookieJS. No jQuery needed.
+CookieJS. **No** jQuery needed.
 
 How to use:
 
