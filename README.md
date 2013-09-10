@@ -11,6 +11,7 @@ How to use:
 * value = value of the cookie
 * expire = days before it expires
 * path = path of the website. '/' for whole site.
+<br />
 Example:<br />
 CookieJS.setCookie('lanugage', 'javascript', 30, '/');
 <br /><br />
