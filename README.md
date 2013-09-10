@@ -1,7 +1,8 @@
 CookieJS
 ========
+CookieJS - Just another small JavaScript library. Use this if you need to set/get/delete cookies.
 
-CookieJS. **No** jQuery needed.
+**No jQuery needed.**
 
 How to use:
 
