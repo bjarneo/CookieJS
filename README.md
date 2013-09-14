@@ -10,7 +10,7 @@ How to use:
 * expire = days before it expires
 * path = path of the website. '/' for whole site.
 
-###CookieJS.setCookie({name: '', value: '', expire: '', path: '', domain: ''})
+####CookieJS.setCookie({name: '', value: '', expire: '', path: '', domain: ''})
 ```javascript
 CookieJS.setCookie({
         name: 'mycookie',
@@ -21,13 +21,13 @@ CookieJS.setCookie({
 ```
 <br /><br />
 
-###CookieJS.getCookie(name);
+####CookieJS.getCookie(name);
 ```javascript
 CookieJS.getCookie('mycookie');
 ```
 <br /><br />
 
-###CookieJS.deleteCookie({name: '', path: '', domain: ''});
+####CookieJS.deleteCookie({name: '', path: '', domain: ''});
 ```javascript
 CookieJS.deleteCookie({
         name: 'mycookie',
