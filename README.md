@@ -19,13 +19,11 @@ CookieJS.setCookie({
         path: '/'
 });
 ```
-<br /><br />
 
 ####CookieJS.getCookie(name);
 ```javascript
 CookieJS.getCookie('mycookie');
 ```
-<br /><br />
 
 ####CookieJS.deleteCookie({name: '', path: '', domain: ''});
 ```javascript
