@@ -1,7 +1,5 @@
 /**
- *
  *  CookieJS - Just another small JavaScript library. Use this if you need to set/get/delete cookies.
- *  Date: 10.09.2013
  *  Author: Bjarne Øverli
  *  Website: http://www.codephun.com
  *  Twitter: http://www.twitter.com/bjarneo_
@@ -11,23 +9,23 @@ var CookieJS =
 {
     /**
      * Set cookie.
-     * @param name - cookie name
-     * @param value - cookie value
-     * @param expires - expires (days)
-     * @param path - set path. '/' for the whole website.
-     * @param domain - set domain
+     * @param params.name - cookie name
+     * @param params.value - cookie value
+     * @param params.expires - expires (days)
+     * @param params.path - set path. '/' for the whole website.
+     * @param params.domain - set domain
      */
-    setCookie: function(name, value, expires, path, domain) {
-        var cookie = name + "=" + encodeURI(value) + ";";
-        if (expires) {
-            expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
-            cookie += "expires=" + expires.toUTCString() + ";";
+    setCookie: function(params) {
+        var cookie = params.name + "=" + encodeURI(params.value) + ";";
+        if (params.expires) {
+            params.expires = new Date(new Date().getTime() + parseInt(params.expires) * 1000 * 60 * 60 * 24);
+            cookie += "expires=" + params.expires.toUTCString() + ";";
         }
-        if (path) {
-            cookie += "path=" + path + ";";
+        if (params.path) {
+            cookie += "path=" + params.path + ";";
         }
-        if (domain) {
-            cookie += "domain=" + domain + ";";
+        if (params.domain) {
+            cookie += "domain=" + params.domain + ";";
         }
         document.cookie = cookie;
     },
@@ -46,13 +44,13 @@ var CookieJS =
 
     /**
      * Delete cookie
-     * @param name - cookie name
-     * @param path - cookie path
-     * @param domain - cookie domain
+     * @param params.name - cookie name
+     * @param params.path - cookie path
+     * @param params.domain - cookie domain
      */
-    deleteCookie: function(name, path, domain) {
-        if (CookieJS.getCookie(name)) {
-            CookieJS.setCookie(name, "", -1, path, domain);
+    deleteCookie: function(params) {
+        if (CookieJS.getCookie(params.name)) {
+            CookieJS.setCookie(params.name, "", -1, params.path, params.domain);
         }
     }
 };
