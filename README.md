@@ -24,6 +24,14 @@ CookieJS.setCookie({
 ```javascript
 CookieJS.getCookie('mycookie');
 ```
+####CookieJS.getCookies(void); Return all cookies.
+```javascript
+//Example:
+var cookies = CookieJS.getCookies();
+console.log(cookies.mycookie);
+// Output: myvalue
+```
+
 
 ####CookieJS.deleteCookie({name: '', path: '', domain: ''});
 ```javascript

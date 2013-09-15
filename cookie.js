@@ -43,6 +43,29 @@ var CookieJS =
     },
 
     /**
+     * Get all cookies (if any)
+     * @returns object cookies
+     */
+    getCookies: function () {
+        var cookies = {},
+            allCookies = document.cookie;
+
+        if(allCookies === '') {
+            return cookies;
+        }
+
+        var list = allCookies.split('; '),
+            len = list.length;
+
+        while(len--) {
+            var cookie = list[len].split('=');
+            cookies[cookie[0]] = cookie[1];
+        }
+
+        return cookies;
+    },
+
+    /**
      * Delete cookie
      * @param params.name - cookie name
      * @param params.path - cookie path
@@ -50,7 +73,13 @@ var CookieJS =
      */
     deleteCookie: function(params) {
         if (CookieJS.getCookie(params.name)) {
-            CookieJS.setCookie(params.name, "", -1, params.path, params.domain);
+            CookieJS.setCookie({
+                name: params.name,
+                value: '',
+                expires: -1,
+                path: params.path,
+                domain: params.domain
+            });
         }
     }
 };
