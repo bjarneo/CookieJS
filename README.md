@@ -9,10 +9,11 @@ How to use:
 * value = value of the cookie
 * expire = days before it expires
 * path = path of the website. '/' for whole site.
-* domain = ex: domain.com. If not set, it would be available for all subdomains.
-* secure = Use SSL while transferring cookie to server
+* (Optional) domain = ex: domain.com. If not set, it would be available for all subdomains.
+* (Optional) secure = Use SSL while transferring cookie to server
+* (Optional) httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
 
-####CookieJS.setCookie({name: '', value: '', expires: '', path: '', domain: '', secure: true/false})
+####CookieJS.setCookie({name: '', value: '', expires: '', path: '', domain: '', secure: true/false, httpOnly: true/false});
 ```javascript
 CookieJS.setCookie({
         name: 'mycookie',
@@ -21,6 +22,7 @@ CookieJS.setCookie({
         path: '/'
         domain: 'domain.com',
         secure: true
+        httpOnly: false
 });
 ```
 

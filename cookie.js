@@ -15,6 +15,7 @@ var CookieJS =
      * @param params.path - Set path. '/' for the whole website.
      * @param params.domain - Set domain
      * @param params.secure - Use SSL when sending the cookie to the server
+     * @param params.httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
      */
     setCookie: function(params) {
         var cookie = params.name + "=" + encodeURI(params.value) + ";";
@@ -30,6 +31,9 @@ var CookieJS =
         }
         if(params.secure) {
             cookie += "secure;";
+        }
+        if(params.httpOnly) {
+            cookie += "httpOnly;"
         }
         document.cookie = cookie;
     },
