@@ -11,9 +11,10 @@ var CookieJS =
      * Set cookie.
      * @param params.name - cookie name
      * @param params.value - cookie value
-     * @param params.expires - expires (days)
-     * @param params.path - set path. '/' for the whole website.
-     * @param params.domain - set domain
+     * @param params.expires - Expires (days)
+     * @param params.path - Set path. '/' for the whole website.
+     * @param params.domain - Set domain
+     * @param params.secure - Use SSL when sending the cookie to the server
      */
     setCookie: function(params) {
         var cookie = params.name + "=" + encodeURI(params.value) + ";";
@@ -26,6 +27,9 @@ var CookieJS =
         }
         if (params.domain) {
             cookie += "domain=" + params.domain + ";";
+        }
+        if(params.secure) {
+            cookie += "secure;";
         }
         document.cookie = cookie;
     },
