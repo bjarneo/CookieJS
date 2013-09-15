@@ -10,7 +10,7 @@ How to use:
 * expire = days before it expires
 * path = path of the website. '/' for whole site.
 * domain = ex: domain.com. If not set, it would be available for all subdomains.
-* secure = Use SSL when sending the cookie to the server
+* secure = Use SSL while transfering cookie to server
 
 ####CookieJS.setCookie({name: '', value: '', expires: '', path: '', domain: '', secure: true/false})
 ```javascript
