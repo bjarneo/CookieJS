@@ -37,6 +37,12 @@ console.log(cookies.mycookie);
 // Output: myvalue
 ```
 
+####CookieJS.hasCookie(name);
+```javascript
+CookieJS.hasCookie('mycookie');
+//Output: returns true or false
+```
+
 ####CookieJS.deleteCookie({name: '', path: '', domain: ''});
 ```javascript
 CookieJS.deleteCookie({

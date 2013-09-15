@@ -70,6 +70,17 @@ var CookieJS =
     },
 
     /**
+     * Check if cookie exists
+     * @param name - cookie name
+     */
+    hasCookie: function(name) {
+        if(CookieJS.getCookie(name)) {
+            return true;
+        }
+        return false;
+    },
+
+    /**
      * Delete cookie
      * @param params.name - cookie name
      * @param params.path - cookie path
