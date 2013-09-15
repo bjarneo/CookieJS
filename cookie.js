@@ -42,7 +42,7 @@ var CookieJS =
     getCookie: function(name) {
         var parts = document.cookie.split(name + "=");
         if (parts.length == 2) {
-            return parts.pop().split(";").shift();
+            return decodeURI(parts.pop().split(";").shift());
         }
     },
 
@@ -63,7 +63,7 @@ var CookieJS =
 
         while(len--) {
             var cookie = list[len].split('=');
-            cookies[cookie[0]] = cookie[1];
+            cookies[cookie[0]] = decodeURI(cookie[1]);
         }
 
         return cookies;
