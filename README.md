@@ -19,7 +19,7 @@ CookieJS.setCookie({
         name: 'mycookie',
         value:'myvalue',
         expires: 30, // x Days
-        path: '/' // Website path
+        path: '/', // Website path
         domain: 'domain.com', // Optional
         secure: true, // Optional
         httpOnly: false // Optional
