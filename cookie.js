@@ -18,23 +18,16 @@ var CookieJS =
      * @param params.httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
      */
     setCookie: function(params) {
-        var cookie = params.name + "=" + encodeURI(params.value) + ";";
+        var cookie = params.name + '=' + encodeURI(params.value) + ';';
         if (params.expires) {
             params.expires = new Date(new Date().getTime() + parseInt(params.expires) * 1000 * 60 * 60 * 24);
-            cookie += "expires=" + params.expires.toUTCString() + ";";
+            cookie += 'expires=' + params.expires.toUTCString() + ";";
         }
-        if (params.path) {
-            cookie += "path=" + params.path + ";";
-        }
-        if (params.domain) {
-            cookie += "domain=" + params.domain + ";";
-        }
-        if(params.secure) {
-            cookie += "secure;";
-        }
-        if(params.httpOnly) {
-            cookie += "httpOnly;"
-        }
+        cookie += (params.path) ? 'path=' + params.path + ';' : '';
+        cookie += (params.domain) ? 'domain=' + params.domain + ';' : '';
+        cookie += (params.secure) ? 'secure;' : '';
+        cookie += (params.httpOnly) ? 'httpOnly;' : '';
+
         document.cookie = cookie;
     },
 
@@ -44,9 +37,9 @@ var CookieJS =
      * @returns value - cookie value
      */
     getCookie: function(name) {
-        var parts = document.cookie.split(name + "=");
+        var parts = document.cookie.split(name + '=');
         if (parts.length == 2) {
-            return decodeURI(parts.pop().split(";").shift());
+            return decodeURI(parts.pop().split(';').shift());
         }
     },
 
