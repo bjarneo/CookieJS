@@ -19,7 +19,7 @@ var CookieJS =
      * @param params.secure - Use SSL when sending the cookie to the server
      * @param params.httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
      */
-    setCookie: function(params) {
+    set: function(params) {
         var cookie = params.name + '=' + encodeURI(params.value) + ';';
         if (params.expires) {
             params.expires = new Date(new Date().getTime() + parseInt(params.expires) * 1000 * 60 * 60 * 24);
@@ -38,7 +38,7 @@ var CookieJS =
      * @param name - cookie name
      * @returns value - cookie value
      */
-    getCookie: function(name) {
+    get: function(name) {
         var parts = document.cookie.split(name + '=');
         if (parts.length == 2) {
             return decodeURI(parts.pop().split(';').shift());
@@ -49,7 +49,7 @@ var CookieJS =
      * Get all cookies (if any)
      * @returns object cookies
      */
-    getCookies: function () {
+    getAll: function () {
         var cookies = {},
             allCookies = document.cookie;
 
@@ -69,11 +69,34 @@ var CookieJS =
     },
 
     /**
+     * Get all keys
+     * @returns array keys
+     */
+    keys: function() {
+        var keys = [],
+            allCookies = document.cookie;
+
+        if(allCookies === '') {
+            return keys;
+        }
+
+        var list = allCookies.split('; '),
+            len = list.length;
+
+        while(len--) {
+            var key = list[len].split('=');
+            keys[len] = key[0];
+        }
+
+        return keys;
+    },
+
+    /**
      * Check if cookie exists
      * @param name - cookie name
      */
-    hasCookie: function(name) {
-        if(CookieJS.getCookie(name)) {
+    has: function(name) {
+        if(CookieJS.get(name)) {
             return true;
         }
         return false;
@@ -85,9 +108,9 @@ var CookieJS =
      * @param params.path - cookie path
      * @param params.domain - cookie domain
      */
-    deleteCookie: function(params) {
-        if (CookieJS.getCookie(params.name)) {
-            CookieJS.setCookie({
+    delete: function(params) {
+        if (CookieJS.get(params.name)) {
+            CookieJS.set({
                 name: params.name,
                 value: '',
                 expires: -1,

@@ -13,9 +13,9 @@ How to use:
 * (Optional) secure = Use SSL while transferring cookie to server
 * (Optional) httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
 
-####CookieJS.setCookie({name: '', value: '', expires: '', path: '', domain: '', secure: true/false, httpOnly: true/false});
+####CookieJS.set({name: '', value: '', expires: '', path: '', domain: '', secure: true/false, httpOnly: true/false});
 ```javascript
-CookieJS.setCookie({
+CookieJS.set({
         name: 'mycookie',
         value:'myvalue',
         expires: 30, // x Days
@@ -26,28 +26,36 @@ CookieJS.setCookie({
 });
 ```
 
-####CookieJS.getCookie(name);
+####CookieJS.get(name);
 ```javascript
-CookieJS.getCookie('mycookie');
+CookieJS.get('mycookie');
 ```
 
-####CookieJS.getCookies(void); Return all cookies.
+####CookieJS.getAll(void); Return all cookies.
 ```javascript
 //Example:
-var cookies = CookieJS.getCookies();
+var cookies = CookieJS.getAll();
 console.log(cookies.mycookie);
 // Output: myvalue
 ```
 
-####CookieJS.hasCookie(name);
+####CookieJS.keys(void); Return all cookies keys.
 ```javascript
-CookieJS.hasCookie('mycookie');
+//Example:
+var cookies = CookieJS.keys();
+console.log(cookies[0]);
+// Output: myvalue
+```
+
+####CookieJS.has(name);
+```javascript
+CookieJS.has('mycookie');
 //Output: returns true or false
 ```
 
-####CookieJS.deleteCookie({name: '', path: '', domain: ''});
+####CookieJS.delete({name: '', path: '', domain: ''});
 ```javascript
-CookieJS.deleteCookie({
+CookieJS.delete({
         name: 'mycookie',
         path: '/'
 });
