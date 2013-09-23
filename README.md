@@ -44,7 +44,7 @@ console.log(cookies.mycookie);
 //Example:
 var cookies = CookieJS.keys();
 console.log(cookies[0]);
-// Output: myvalue
+// Output: mycookie
 ```
 
 ####CookieJS.has(name);
