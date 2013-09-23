@@ -39,7 +39,7 @@ console.log(cookies.mycookie);
 // Output: myvalue
 ```
 
-####CookieJS.keys(void); Return all cookies keys.
+####CookieJS.keys(void); Return all cookie keys.
 ```javascript
 //Example:
 var cookies = CookieJS.keys();
