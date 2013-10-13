@@ -96,7 +96,7 @@ var CookieJS =
      * @param name - cookie name
      */
     has: function(name) {
-        if(CookieJS.get(name)) {
+        if(this.get(name)) {
             return true;
         }
         return false;
@@ -109,8 +109,8 @@ var CookieJS =
      * @param params.domain - cookie domain
      */
     delete: function(params) {
-        if (CookieJS.get(params.name)) {
-            CookieJS.set({
+        if (this.get(params.name)) {
+            this.set({
                 name: params.name,
                 value: '',
                 expires: -1,
