@@ -21,10 +21,12 @@ var CookieJS =
      */
     set: function(params) {
         var cookie = params.name + '=' + encodeURI(params.value) + ';';
+        
         if (params.expires) {
             params.expires = new Date(new Date().getTime() + parseInt(params.expires) * 1000 * 60 * 60 * 24);
             cookie += 'expires=' + params.expires.toUTCString() + ";";
         }
+
         cookie += (params.path) ? 'path=' + params.path + ';' : '';
         cookie += (params.domain) ? 'domain=' + params.domain + ';' : '';
         cookie += (params.secure) ? 'secure;' : '';
@@ -40,6 +42,7 @@ var CookieJS =
      */
     get: function(name) {
         var parts = document.cookie.split(name + '=');
+        
         if (parts.length == 2) {
             return decodeURI(parts.pop().split(';').shift());
         }
@@ -53,14 +56,14 @@ var CookieJS =
         var cookies = {},
             allCookies = document.cookie;
 
-        if(allCookies === '') {
+        if (allCookies === '') {
             return cookies;
         }
 
         var list = allCookies.split('; '),
             len = list.length;
 
-        while(len--) {
+        while (len--) {
             var cookie = list[len].split('=');
             cookies[cookie[0]] = decodeURI(cookie[1]);
         }
@@ -76,14 +79,14 @@ var CookieJS =
         var keys = [],
             allCookies = document.cookie;
 
-        if(allCookies === '') {
+        if (allCookies === '') {
             return keys;
         }
 
         var list = allCookies.split('; '),
             len = list.length;
 
-        while(len--) {
+        while (len--) {
             var key = list[len].split('=');
             keys[len] = key[0];
         }
@@ -96,9 +99,10 @@ var CookieJS =
      * @param name - cookie name
      */
     has: function(name) {
-        if(this.get(name)) {
+        if (this.get(name)) {
             return true;
         }
+
         return false;
     },
 
