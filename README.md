@@ -55,7 +55,7 @@ CookieJS.has('mycookie');
 
 ####CookieJS.delete({name: '', path: '', domain: ''});
 ```javascript
-CookieJS.delete({
+CookieJS.del({
         name: 'mycookie',
         path: '/'
 });
