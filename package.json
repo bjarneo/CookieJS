@@ -1,12 +1,12 @@
 {
-    "name": "CookieJS",
-    "version": "1.0.0",
-    "author": "Bjarne Øverli http://www.twitter.com/bjarneo_",
-    "description": "JavaScript Cookie micro library",
-    "devDependencies": {
-        "gulp": "*",
-        "gulp-jshint": "*",
-        "gulp-concat": "*",
-        "gulp-uglify": "*"
-    }
+  "name": "CookieJS",
+  "version": "1.0.0",
+  "author": "Bjarne Øverli http://www.twitter.com/bjarneo_",
+  "description": "JavaScript Cookie micro library",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-jshint": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*"
+  }
 }
