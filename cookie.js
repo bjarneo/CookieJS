@@ -8,10 +8,8 @@
  *  http://www.opensource.org/licenses/MIT
  */
 
-/*global document:{}*/
-/*global window:{}*/
 /*global define:{}*/
-(function () {
+(function (document, window) {
     'use strict';
 
     var CookieJS = {
@@ -78,7 +76,7 @@
 
             while (len--) {
                 cookie = list[len].split('=');
-                
+
                 cookies[cookie[0]] = decodeURI(cookie[1]);
             }
 
@@ -142,23 +140,23 @@
     // The documentation mentions CookieJS.delete, but the code
     // only defines CookieJS.del.  This is a compatibility shim
     // for any existing code that uses it
-    CookieJS.prototype.del = function() {
+    CookieJS.prototype.del = function () {
       if (console && console.warn) {
           console.warn(
-              'CookieJS deprecation warning:', 
+              'CookieJS deprecation warning:',
               'CookieJS.del is deprecated and CookieJS.delete should be used instead.'
           );
       }
-        
+
       return CookieJS.prototype.delete.apply(this, arguments);
     };
 
     // Check if is node, amd or else we set it to window
     if (typeof define === 'function' && define.amd) {
-        define([], function() {
-                return CookieJS;
+        define([], function () {
+            return CookieJS;
         });
     } else {
         window.CookieJS = CookieJS;
     }
-})();
+}(document, window));
