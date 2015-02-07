@@ -25,11 +25,20 @@ CookieJS.set({
         httpOnly: false // Optional
 });
 ```
+#####Return Value
+No return value.
+
+---
 
 ####CookieJS.get(name);
 ```javascript
 CookieJS.get('mycookie');
 ```
+
+#####Return Value
+Returns the value of the stored cookie, or undefined if the cookies key does not exist.
+
+---
 
 ####CookieJS.getAll(void); Return all cookies.
 ```javascript
@@ -39,6 +48,11 @@ console.log(cookies.mycookie);
 // Output: myvalue
 ```
 
+#####Return Value
+Returns a key-value hash of available cookies on the document.  If there are no available cookies, an empty hash is returned.
+
+---
+
 ####CookieJS.keys(void); Return all cookie keys.
 ```javascript
 //Example:
@@ -47,16 +61,29 @@ console.log(cookies[0]);
 // Output: mycookie
 ```
 
+---
+
+#####Return Value
+Returns an array of keys of set cookies.  If no cookies have been set, `CookieJS.keys()` returns an empty array.
+
 ####CookieJS.has(name);
 ```javascript
 CookieJS.has('mycookie');
 //Output: returns true or false
 ```
 
+#####Return Value
+Returns true if `name` is the key of a cookie, otherwise returns false.
+
+---
+
 ####CookieJS.delete({name: '', path: '', domain: ''});
 ```javascript
-CookieJS.del({
+CookieJS.delete({
         name: 'mycookie',
         path: '/'
 });
 ```
+
+#####Return Value
+No return value.
