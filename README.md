@@ -28,8 +28,7 @@ CookieJS.set({
 #####Return Value
 No return value.
 
-#####Return Value
-None
+---
 
 ####CookieJS.get(name);
 ```javascript
@@ -38,6 +37,8 @@ CookieJS.get('mycookie');
 
 #####Return Value
 Returns the value of the stored cookie, or undefined if the cookies key does not exist.
+
+---
 
 ####CookieJS.getAll(void); Return all cookies.
 ```javascript
@@ -50,6 +51,8 @@ console.log(cookies.mycookie);
 #####Return Value
 Returns a key-value hash of available cookies on the document.  If there are no available cookies, an empty hash is returned.
 
+---
+
 ####CookieJS.keys(void); Return all cookie keys.
 ```javascript
 //Example:
@@ -57,6 +60,8 @@ var cookies = CookieJS.keys();
 console.log(cookies[0]);
 // Output: mycookie
 ```
+
+---
 
 #####Return Value
 Returns an array of keys of set cookies.  If no cookies have been set, `CookieJS.keys()` returns an empty array.
@@ -69,6 +74,8 @@ CookieJS.has('mycookie');
 
 #####Return Value
 Returns true if `name` is the key of a cookie, otherwise returns false.
+
+---
 
 ####CookieJS.delete({name: '', path: '', domain: ''});
 ```javascript
