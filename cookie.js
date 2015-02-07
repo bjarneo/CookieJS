@@ -69,7 +69,7 @@
                 allCookies = document.cookie,
                 cookie;
 
-            if (allCookies === '') {
+            if (!allCookies) {
                 return cookies;
             }
 
