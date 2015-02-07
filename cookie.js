@@ -66,7 +66,8 @@
          */
         getAll: function () {
             var cookies = {},
-                allCookies = document.cookie;
+                allCookies = document.cookie,
+                cookie;
 
             if (allCookies === '') {
                 return cookies;
@@ -76,7 +77,8 @@
                 len = list.length;
 
             while (len--) {
-                var cookie = list[len].split('=');
+                cookie = list[len].split('=');
+                
                 cookies[cookie[0]] = decodeURI(cookie[1]);
             }
 
@@ -142,8 +144,12 @@
     // for any existing code that uses it
     CookieJS.prototype.del = function() {
       if (console && console.warn) {
-          console.warn('CookieJS deprecation warning:', 'CookieJS.del is deprecated and CookieJS.delete should be used instead.');
+          console.warn(
+              'CookieJS deprecation warning:', 
+              'CookieJS.del is deprecated and CookieJS.delete should be used instead.'
+          );
       }
+        
       return CookieJS.prototype.delete.apply(this, arguments);
     };
 
