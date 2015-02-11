@@ -1,7 +1,7 @@
 /**
  *  CookieJS - Just another small JavaScript library.
  *  Use this if you need to set/get/delete cookies.
- *  Website: http://www.codephun.com
+ *  Website: http://bjarneo.codes
  *  Twitter: http://www.twitter.com/bjarneo_
  *  Copyright (c) 2013, Bjarne Øverli
  *  Licensed under the MIT license
