@@ -2,6 +2,12 @@ CookieJS
 ========
 CookieJS - Just another small JavaScript library. Use this if you need to set/get/delete cookies.
 
+This library is now pushed to NPM, and is available as an UMD build.
+
+```
+$ npm i --save cookie-micro
+```
+
 **No jQuery needed.**
 
 How to use:
@@ -13,7 +19,8 @@ How to use:
 * (Optional) secure = Use SSL while transferring cookie to server
 * (Optional) httpOnly -  Using the HttpOnly flag when generating a cookie helps mitigate the risk of client side script accessing the protected cookie (if the browser supports it). (https://www.owasp.org/index.php/HttpOnly)
 
-####CookieJS.set({name: '', value: '', expires: '', path: '', domain: '', secure: true/false, httpOnly: true/false});
+CookieJS.set({name: '', value: '', expires: '', path: '', domain: '', secure: true/false, httpOnly: true/false});
+---
 ```javascript
 CookieJS.set({
         name: 'mycookie',
@@ -25,22 +32,21 @@ CookieJS.set({
         httpOnly: false // Optional
 });
 ```
-#####Return Value
 No return value.
 
 ---
 
-####CookieJS.get(name);
+CookieJS.get(name);
+---
 ```javascript
 CookieJS.get('mycookie');
 ```
-
-#####Return Value
 Returns the value of the stored cookie, or undefined if the cookies key does not exist.
 
 ---
 
-####CookieJS.getAll(void); Return all cookies.
+CookieJS.getAll(void); Return all cookies.
+---
 ```javascript
 //Example:
 var cookies = CookieJS.getAll();
@@ -48,12 +54,13 @@ console.log(cookies.mycookie);
 // Output: myvalue
 ```
 
-#####Return Value
 Returns a key-value hash of available cookies on the document.  If there are no available cookies, an empty hash is returned.
 
 ---
 
-####CookieJS.keys(void); Return all cookie keys.
+CookieJS.keys(void); Return all cookie keys.
+---
+
 ```javascript
 //Example:
 var cookies = CookieJS.keys();
@@ -63,21 +70,21 @@ console.log(cookies[0]);
 
 ---
 
-#####Return Value
 Returns an array of keys of set cookies.  If no cookies have been set, `CookieJS.keys()` returns an empty array.
 
-####CookieJS.has(name);
+CookieJS.has(name);
+---
 ```javascript
 CookieJS.has('mycookie');
 //Output: returns true or false
 ```
 
-#####Return Value
 Returns true if `name` is the key of a cookie, otherwise returns false.
 
 ---
 
-####CookieJS.delete({name: '', path: '', domain: ''});
+CookieJS.delete({name: '', path: '', domain: ''});
+---
 ```javascript
 CookieJS.delete({
         name: 'mycookie',
@@ -85,5 +92,4 @@ CookieJS.delete({
 });
 ```
 
-#####Return Value
 No return value.

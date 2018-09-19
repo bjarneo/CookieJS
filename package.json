@@ -1,12 +1,31 @@
 {
-  "name": "CookieJS",
+  "name": "cookie-micro",
   "version": "1.0.0",
   "author": "Bjarne Øverli http://www.twitter.com/bjarneo_",
   "description": "JavaScript Cookie micro library",
+  "source": "cookie.js",
+  "main": "cookie.min.js",
+  "umd:main": "cookie.min.js",
+  "scripts": {
+    "build": "nanon"
+  },
+  "nanon": {
+    "input": "cookie.js",
+    "output": "cookie.min.js",
+    "name": "CookieJS",
+    "polyfill": true
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjarneo/CookieJS.git"
+  },
+  "homepage": "https://github.com/bjarneo/CookieJS",
+  "bugs": {
+    "url": "https://github.com/bjarneo/CookieJS/issues"
+  },
+  "files": ["cookie.js", "cookie.min.js"],
   "devDependencies": {
-    "gulp": "*",
-    "gulp-jshint": "*",
-    "gulp-concat": "*",
-    "gulp-uglify": "*"
+    "nanon": "^2.0.5"
   }
 }
