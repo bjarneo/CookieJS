@@ -1,8 +1,9 @@
 {
   "name": "cookie-micro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Bjarne Øverli http://www.twitter.com/bjarneo_",
   "description": "JavaScript Cookie micro library",
+  "keywords": ["cookie", "cookiejs", "micro", "sdk", "cookies", "browser"],
   "source": "cookie.js",
   "main": "cookie.min.js",
   "umd:main": "cookie.min.js",

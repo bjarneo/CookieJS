@@ -8,6 +8,12 @@ This library is now pushed to NPM, and is available as an UMD build.
 $ npm i --save cookie-micro
 ```
 
+UNPKG
+---
+```
+<script src="//unpkg.com/cookie-micro/cookie.min.js"></script>
+```
+
 **No jQuery needed.**
 
 How to use:
